@@ -9,6 +9,6 @@ The code consist of a server running on the Raspberry Pi, and a client you can r
 You need to have pygame (https://www.pygame.org/wiki/GettingStarted) installed on both the server and the client to make this work.
 Install it using:
 
-```python
+```
 python3 -m pip install -U pygame --user
 ```
