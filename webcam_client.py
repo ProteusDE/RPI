@@ -8,8 +8,8 @@ BUFFER_SIZE = 4096
 pygame.init()
 pygame.display.init()
 
-display_height, display_width = 640, 480
-game_display = pygame.display.set_mode((display_height, display_width))
+display_width, display_height = 840, 480
+display = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('Servertest')
 
 
@@ -17,7 +17,7 @@ def get_img():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((HOST, PORT))
 
-    imag = f"image.bmp"
+    imag = "image.bmp"
     fp = open(imag, 'wb')
     s.send(b'img')
     while True:
@@ -37,8 +37,9 @@ while True:
             quit()
 
     get_img()
-    ball = pygame.image.load("image.bmp")
-    game_display.blit(ball, (0, 0))
+
+    frame = pygame.image.load("image.bmp")
+    display.blit(frame, (200, 0))
     pygame.display.flip()
 
 pygame.quit()
